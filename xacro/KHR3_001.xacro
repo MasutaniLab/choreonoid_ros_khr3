@@ -4,6 +4,10 @@
 <xacro:include filename="$(find KHR3_001_description)/xacro/materials.xacro" />
 <xacro:include filename="$(find KHR3_001_description)/xacro/KHR3_001.trans" />
 <xacro:include filename="$(find KHR3_001_description)/xacro/KHR3_001.gazebo" />
+
+ <!-- Description of robot -->
+<link name="base_footprint"/>
+
 <link name="base_link">
   <inertial>
     <origin xyz="-0.0004860989233068058 0.009532810756286874 0.27413898086600197" rpy="0 0 0"/>
@@ -528,6 +532,12 @@
     </geometry>
   </collision>
 </link>
+
+<joint name="base_joint0" type="floating">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
 
 <joint name="base_link1" type="continuous">
   <origin xyz="0.010956 0.009542 0.29475" rpy="0 0 0"/>
