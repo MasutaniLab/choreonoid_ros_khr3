@@ -7,5 +7,5 @@
   ```
   cd catkin_ws
   source devel/setup.bash
-  oslaunch KHR3_001_description KHR3.launch
+  roslaunch KHR3_001_description KHR3.launch
   ```
