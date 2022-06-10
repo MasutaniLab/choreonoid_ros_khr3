@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="choreonoid_joy" name="choreonoid_joy" type="node" />
+  <node pkg="choreonoid_ros" name="choreonoid" type="choreonoid"
+	args="$(find KHR3_001_description)/project/ROS-KHR.cnoid --start-simulation" />
+</launch>
