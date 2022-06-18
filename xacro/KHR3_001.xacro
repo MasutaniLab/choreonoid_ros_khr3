@@ -539,7 +539,7 @@
         <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
 
-<joint name="base_link1" type="continuous">
+<joint name="c_chest_yaw" type="continuous">
   <origin xyz="0.010956 0.009542 0.29475" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="c_chest_c_1"/>
@@ -565,14 +565,14 @@
   <axis xyz="0.0 -0.0 1.0"/>
 </joint>
 
-<joint name="l_shouluder_pitch" type="continuous">
+<joint name="l_shoulder_pitch" type="continuous">
   <origin xyz="0.0115 0.0489 0.04775" rpy="0 0 0"/>
   <parent link="c_chest_c_1"/>
   <child link="l_shoulder_v5_1"/>
   <axis xyz="-0.0 1.0 0.0"/>
 </joint>
 
-<joint name="l_shouluder_roll" type="continuous">
+<joint name="l_shoulder_roll" type="continuous">
   <origin xyz="0.01575 0.025 0.0" rpy="0 0 0"/>
   <parent link="l_shoulder_v5_1"/>
   <child link="l_upperarm_v4_1"/>
@@ -593,14 +593,14 @@
   <axis xyz="-0.0 1.0 0.0"/>
 </joint>
 
-<joint name="r_shouluder_pitch" type="continuous">
+<joint name="r_shoulder_pitch" type="continuous">
   <origin xyz="0.0115 -0.0489 0.04775" rpy="0 0 0"/>
   <parent link="c_chest_c_1"/>
   <child link="r_shoulder_v4_1"/>
   <axis xyz="0.0 -1.0 -0.0"/>
 </joint>
 
-<joint name="r_shouluder_roll" type="continuous">
+<joint name="r_shoulder_roll" type="continuous">
   <origin xyz="0.01575 -0.025 0.0" rpy="0 0 0"/>
   <parent link="r_shoulder_v4_1"/>
   <child link="r_upperarm_v3_1"/>

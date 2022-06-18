@@ -10,6 +10,7 @@ items:
       name: "World"
       plugin: Body
       class: WorldItem
+      is_checked: true
       data: 
         collision_detection: false
         collision_detector: AISTCollisionDetector
@@ -20,7 +21,6 @@ items:
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
-          is_selected: true
           data: 
             timeStep: 0.001
             realtimeSync: true
@@ -78,7 +78,7 @@ items:
             initialJointPositions: [ 
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-              0, 0 ]
+              0, 0, 0 ]
             staticModel: false
             collisionDetection: true
             selfCollisionDetection: false
@@ -110,12 +110,12 @@ items:
               name: "ROSControl"
               plugin: ROS
               class: ROSControlItem
+              is_checked: true
         - 
           id: 6
           name: "floor"
           plugin: Body
           class: BodyItem
-          is_checked: true
           data: 
             file: "../model/floor.wrl"
             format: CHOREONOID-BODY
@@ -188,9 +188,9 @@ views:
         - 
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 0.597913, 0.371915, 0.457102 ]
-          direction: [ -0.709682, -0.627034, -0.321216 ]
-          up: [ -0.240718, -0.212684, 0.947006 ]
+          eye: [ 0.601602, 0.365917, 0.457102 ]
+          direction: [ -0.715917, -0.619906, -0.321216 ]
+          up: [ -0.242833, -0.210267, 0.947006 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -266,7 +266,7 @@ views:
     mounted: true
 toolbars: 
   "TimeBar": 
-    current_time: 1.59
+    current_time: 144.554
     min_time: 0
     max_time: 549.577
     frame_rate: 1000
@@ -324,17 +324,17 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 1400, 444 ]
+      sizes: [ 881, 279 ]
       children: 
         - 
           type: splitter
           orientation: horizontal
-          sizes: [ 362, 1034 ]
+          sizes: [ 227, 650 ]
           children: 
             - 
               type: splitter
               orientation: vertical
-              sizes: [ 444, 444 ]
+              sizes: [ 307, 307 ]
               children: 
                 - 
                   type: pane
@@ -346,7 +346,7 @@ viewAreas:
             - 
               type: splitter
               orientation: vertical
-              sizes: [ 666, 222 ]
+              sizes: [ 461, 153 ]
               children: 
                 - 
                   type: pane
@@ -358,7 +358,7 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 198, 690 ]
+          sizes: [ 198, 416 ]
           children: 
             - 
               type: pane
@@ -366,7 +366,7 @@ viewAreas:
             - 
               type: splitter
               orientation: vertical
-              sizes: [ 284, 402 ]
+              sizes: [ 284, 128 ]
               children: 
                 - 
                   type: pane

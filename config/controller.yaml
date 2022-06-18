@@ -5,21 +5,21 @@ KHR3_001_controller:
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  base_link1_position_controller:
+  c_chest_yaw_position_controller:
     type: effort_controllers/JointPositionController
-    joint: base_link1
+    joint: c_chest_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
   c_head_yaw_position_controller:
     type: effort_controllers/JointPositionController
     joint: c_head_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  l_shouluder_pitch_position_controller:
+  l_shoulder_pitch_position_controller:
     type: effort_controllers/JointPositionController
-    joint: l_shouluder_pitch
+    joint: l_shoulder_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  l_shouluder_roll_position_controller:
+  l_shoulder_roll_position_controller:
     type: effort_controllers/JointPositionController
-    joint: l_shouluder_roll
+    joint: l_shoulder_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_elbow_yaw_position_controller:
     type: effort_controllers/JointPositionController
@@ -29,13 +29,13 @@ KHR3_001_controller:
     type: effort_controllers/JointPositionController
     joint: l_elbow_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  r_shouluder_pitch_position_controller:
+  r_shoulder_pitch_position_controller:
     type: effort_controllers/JointPositionController
-    joint: r_shouluder_pitch
+    joint: r_shoulder_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  r_shouluder_roll_position_controller:
+  r_shoulder_roll_position_controller:
     type: effort_controllers/JointPositionController
-    joint: r_shouluder_roll
+    joint: r_shoulder_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_elbow_yaw_position_controller:
     type: effort_controllers/JointPositionController
