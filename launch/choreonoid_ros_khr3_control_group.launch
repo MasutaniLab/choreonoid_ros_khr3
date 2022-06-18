@@ -1,0 +1,19 @@
+<launch>
+    <param name="use_sim_time" value="true"/>
+
+    <!-- set namespace -->
+    <group ns="KHR3_001">
+        <arg name="model" default="KHR3_001.xacro"/>
+        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find KHR3_001_description)/xacro/$(arg model)'"/>
+
+        <!-- robot_state_publisher -->
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true"/>
+
+        <!-- load controller from rosparam -->
+        <rosparam file="$(find KHR3_001_description)/config/choreonoid_ros_khr3_control_group.yaml" command="load"/>
+        <node name="controller_spawner" pkg="controller_manager"
+            type="spawner" output="screen" respawn="true"
+            args="joint_state_controller
+                joint_group_position_controller"/>
+    </group>
+</launch>

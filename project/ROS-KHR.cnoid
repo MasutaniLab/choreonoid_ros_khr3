@@ -20,7 +20,7 @@ items:
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
-          is_checked: true
+          is_selected: true
           data: 
             timeStep: 0.001
             realtimeSync: true
@@ -28,7 +28,7 @@ items:
             timeRangeMode: "Unlimited"
             timeLength: 180
             active_control_time_range_mode: false
-            allLinkPositionOutputMode: false
+            allLinkPositionOutputMode: true
             deviceStateOutput: true
             controllerThreads: true
             recordCollisionData: false
@@ -63,17 +63,13 @@ items:
               0, 1, 0, 
               0, 0, 1 ]
             jointDisplacements: [ 
-              -30.6112, 46.9715, -5.64793, -0.818975, 157.929, -5.54883, 5.73549, 0.661299, -161.513, -5.4167, 
-              6.24752, -6.34577, 1.27639, -1.1045, -0.0742092, 3.54521, -5.81242, 6.37522, -1.23988, -1.12366, 
-              -0.0905035, -3.64736 ]
-            initialJointDisplacements: [ 
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-              0, 0 ]
+              0, 0, 0 ]
             jointPositions: [ 
-              -0.534266, 0.819807, -0.098575, -0.0142938, 2.75639, -0.0968453, 0.100103, 0.0115418, -2.81894, -0.0945393, 
-              0.10904, -0.110755, 0.0222773, -0.0192771, -0.0012952, 0.0618755, -0.101446, 0.111269, -0.0216401, -0.0196115, 
-              -0.00157958, -0.0636584 ]
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+              0, 0, 0 ]
             initialRootPosition: [ 0, 0, 0 ]
             initialRootAttitude: [ 
               1, 0, 0, 
@@ -89,12 +85,33 @@ items:
             location_editable: true
             scene_sensitive: true
             link_kinematics: 
+              "l_lowerarm_v7_1": 
+                base_frame: 0
+                offset_frame: 0
+              "r_lowerarm_v5_1": 
+                base_frame: 0
+                offset_frame: 0
               "l_foot_v3_1": 
                 base_frame: 0
                 offset_frame: 0
             zmp: [ 0, 0, 0 ]
+          children: 
+            - 
+              id: 4
+              name: "BodyROS"
+              plugin: ROS
+              class: BodyROSItem
+              is_checked: true
+              data: 
+                body_ros_version: 0
+                joint_state_update_rate: 100
+            - 
+              id: 5
+              name: "ROSControl"
+              plugin: ROS
+              class: ROSControlItem
         - 
-          id: 4
+          id: 6
           name: "floor"
           plugin: Body
           class: BodyItem
@@ -119,6 +136,14 @@ items:
             location_editable: true
             scene_sensitive: true
             zmp: [ 0, 0, 0 ]
+        - 
+          id: 7
+          name: "WorldROS"
+          plugin: ROS
+          class: WorldROSItem
+          is_checked: true
+          data: 
+            max_clock_publishing_rate: 100
 views: 
   - 
     id: 0
@@ -131,7 +156,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      expanded: [ 1 ]
+      expanded: [ 1, 3 ]
   - 
     id: 2
     plugin: Base
@@ -163,9 +188,9 @@ views:
         - 
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 0.571593, 0.511865, 0.340645 ]
-          direction: [ -0.625509, -0.762301, -0.166238 ]
-          up: [ -0.105451, -0.128511, 0.986086 ]
+          eye: [ 0.597913, 0.371915, 0.457102 ]
+          direction: [ -0.709682, -0.627034, -0.321216 ]
+          up: [ -0.240718, -0.212684, 0.947006 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -241,7 +266,7 @@ views:
     mounted: true
 toolbars: 
   "TimeBar": 
-    current_time: 242.196
+    current_time: 1.59
     min_time: 0
     max_time: 549.577
     frame_rate: 1000
@@ -274,7 +299,7 @@ Body:
         show_cm_projection: false
         show_zmp: false
       - 
-        bodyItem: 4
+        bodyItem: 6
         show_cm: false
         show_cm_projection: false
         show_zmp: false
@@ -292,9 +317,6 @@ Body:
     inputFrameRate: 200
     isOutputFrameRateSpecified: false
     outputFrameRate: 200
-Media: 
-  "PulseAudioManager": 
-    keepStreamConnection: false
 viewAreas: 
   - 
     type: embedded
