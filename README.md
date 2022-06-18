@@ -5,7 +5,11 @@
 
 - Terminal 
   ```
-  cd catkin_ws
-  source devel/setup.bash
-  roslaunch KHR3_001_description KHR3.launch
+  roslaunch KHR3_001_description bringup_group.launch
+
+  ```
+- Termina2 
+  ```
+  rosrun KHR3_001_description sinewave_command_group
+
   ```
