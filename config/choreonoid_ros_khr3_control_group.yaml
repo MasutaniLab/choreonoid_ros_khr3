@@ -13,7 +13,6 @@ joint_group_position_controller:
   joints:
     - c_chest_yaw
     - c_head_yaw
-    l_shoulder_pitch
     - l_shoulder_pitch    
     - l_shoulder_roll
     - l_elbow_yaw
