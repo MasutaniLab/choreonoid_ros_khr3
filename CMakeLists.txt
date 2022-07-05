@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(KHR3_001_description)
+project(choreonoid_ros_khr3)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -8,7 +8,9 @@ project(KHR3_001_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  roscpp
   rospy
+  std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -147,6 +149,11 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+
+add_executable(sinewave_command_group src/sinewave_command_group.cpp)
+add_dependencies(sinewave_command_group ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(sinewave_command_group ${catkin_LIBRARIES})
 
 #############
 ## Install ##

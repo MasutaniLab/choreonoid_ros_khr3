@@ -1,10 +1,18 @@
 <?xml version="1.0" ?>
-<robot name="KHR3_001" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<robot name="khr3_001" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
-<gazebo>
+
+
+<!-- <gazebo>
   <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo> -->
+<gazebo><!-- Do I have to write it down? -->
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/khr3_001</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
 </gazebo>
 <gazebo reference="base_link">
   <material>${body_color}</material>
@@ -14,171 +22,171 @@
   <gravity>true</gravity>
 </gazebo>
 
-<gazebo reference="c_chest_c_1">
+<gazebo reference="c_chest_c">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="c_chest_b_1">
+<gazebo reference="c_chest_b">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="c_chest_a_1">
+<gazebo reference="c_chest_a">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="c_head_a_1">
+<gazebo reference="c_head_a">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_shoulder_v5_1">
+<gazebo reference="l_shoulder">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_upperarm_v4_1">
+<gazebo reference="l_upperarm">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_elbow_v4_1">
+<gazebo reference="l_elbow">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_lowerarm_v7_1">
+<gazebo reference="l_lowerarm">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_shoulder_v4_1">
+<gazebo reference="r_shoulder">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_upperarm_v3_1">
+<gazebo reference="r_upperarm">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_elbow_v4_1">
+<gazebo reference="r_elbow">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_lowerarm_v5_1">
+<gazebo reference="r_lowerarm">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_hipjointupper_v4_1">
+<gazebo reference="l_hipjointupper">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_hipjointlower_v4_1">
+<gazebo reference="l_hipjointlower">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_upperreg_v3_1">
+<gazebo reference="l_upperreg">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_lowerreg_v5_1">
+<gazebo reference="l_lowerreg">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_ankle_v5_1">
+<gazebo reference="l_ankle">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="l_foot_v3_1">
+<gazebo reference="l_foot">
+  <material>${body_color}</material>
+  <mu1>1</mu1>
+  <mu2>1</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="r_hipjointupper">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_hipjointupper_v4_1">
+<gazebo reference="r_hipjointlower">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_hipjointlower_v4_1">
+<gazebo reference="r_upperreg">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_upperreg_v3_1">
+<gazebo reference="r_lowerreg">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_lowerreg_v5_1">
+<gazebo reference="r_ankle">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="r_ankle_v5_1">
+<gazebo reference="r_foot">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
-
-<gazebo reference="r_foot_v3_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1</mu1>
+  <mu2>1</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 

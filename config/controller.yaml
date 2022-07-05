@@ -1,4 +1,4 @@
-KHR3_001_controller:
+khr3_001_controller:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController

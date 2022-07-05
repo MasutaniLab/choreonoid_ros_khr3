@@ -6,10 +6,20 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
         - /TF1
-      Splitter Ratio: 0.5
-    Tree Height: 579
+        - /TF1/Frames1
+        - /TF1/Frames1/base_footprint1
+        - /TF1/Frames1/base_link1
+        - /TF1/Frames1/c_chest_a1
+        - /TF1/Frames1/c_chest_b1
+        - /TF1/Frames1/c_chest_c1
+        - /TF1/Frames1/c_head_a1
+        - /TF1/Frames1/l_ankle1
+        - /TF1/Tree1
+        - /TF1/Tree1/base_footprint1
+        - /RobotModel1
+      Splitter Ratio: 0.5470588207244873
+    Tree Height: 549
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -36,25 +46,106 @@ Toolbars:
 Visualization Manager:
   Class: ""
   Displays:
-    - Alpha: 0.5
-      Cell Size: 1
-      Class: rviz/Grid
-      Color: 160; 160; 164
+    - Class: rviz/TF
       Enabled: true
-      Line Style:
-        Line Width: 0.029999999329447746
-        Value: Lines
-      Name: Grid
-      Normal Cell Count: 0
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Plane: XY
-      Plane Cell Count: 10
-      Reference Frame: <Fixed Frame>
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_footprint:
+          Value: true
+        base_link:
+          Value: true
+        c_chest_a:
+          Value: true
+        c_chest_b:
+          Value: true
+        c_chest_c:
+          Value: true
+        c_head_a:
+          Value: true
+        l_ankle:
+          Value: true
+        l_elbow:
+          Value: true
+        l_foot:
+          Value: true
+        l_hipjointlower:
+          Value: true
+        l_hipjointupper:
+          Value: true
+        l_lowerarm:
+          Value: true
+        l_lowerreg:
+          Value: true
+        l_shoulder:
+          Value: true
+        l_upperarm:
+          Value: true
+        l_upperreg:
+          Value: true
+        r_ankle:
+          Value: true
+        r_elbow:
+          Value: true
+        r_foot:
+          Value: true
+        r_hipjointlower:
+          Value: true
+        r_hipjointupper:
+          Value: true
+        r_lowerarm:
+          Value: true
+        r_lowerreg:
+          Value: true
+        r_shoulder:
+          Value: true
+        r_upperarm:
+          Value: true
+        r_upperreg:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 0.10000000149011612
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: true
+      Tree:
+        base_footprint:
+          base_link:
+            c_chest_c:
+              c_chest_a:
+                {}
+              c_chest_b:
+                {}
+              c_head_a:
+                {}
+              l_shoulder:
+                l_upperarm:
+                  l_elbow:
+                    l_lowerarm:
+                      {}
+              r_shoulder:
+                r_upperarm:
+                  r_elbow:
+                    r_lowerarm:
+                      {}
+            l_hipjointupper:
+              l_hipjointlower:
+                l_upperreg:
+                  l_lowerreg:
+                    l_ankle:
+                      l_foot:
+                        {}
+            r_hipjointupper:
+              r_hipjointlower:
+                r_upperreg:
+                  r_lowerreg:
+                    r_ankle:
+                      r_foot:
+                        {}
+      Update Interval: 0
       Value: true
-    - Alpha: 0.5
+    - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
@@ -73,228 +164,132 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        c_chest_a_1:
+        c_chest_a:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        c_chest_b_1:
+        c_chest_b:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        c_chest_c_1:
+        c_chest_c:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        c_head_a_1:
+        c_head_a:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_ankle_v5_1:
+        l_ankle:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_elbow_v4_1:
+        l_elbow:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_foot_v3_1:
+        l_foot:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_hipjointlower_v4_1:
+        l_hipjointlower:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_hipjointupper_v4_1:
+        l_hipjointupper:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_lowerarm_v7_1:
+        l_lowerarm:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_lowerreg_v5_1:
+        l_lowerreg:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_shoulder_v5_1:
+        l_shoulder:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_upperarm_v4_1:
+        l_upperarm:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_upperreg_v3_1:
+        l_upperreg:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_ankle_v5_1:
+        r_ankle:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_elbow_v4_1:
+        r_elbow:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_foot_v3_1:
+        r_foot:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_hipjointlower_v4_1:
+        r_hipjointlower:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_hipjointupper_v4_1:
+        r_hipjointupper:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_lowerarm_v5_1:
+        r_lowerarm:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_lowerreg_v5_1:
+        r_lowerreg:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_shoulder_v4_1:
+        r_shoulder:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_upperarm_v3_1:
+        r_upperarm:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_upperreg_v3_1:
+        r_upperreg:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
       Name: RobotModel
-      Robot Description: robot_description
+      Robot Description: /khr3_001/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Class: rviz/TF
-      Enabled: true
-      Frame Timeout: 15
-      Frames:
-        All Enabled: true
-        base_link:
-          Value: true
-        c_chest_a_1:
-          Value: true
-        c_chest_b_1:
-          Value: true
-        c_chest_c_1:
-          Value: true
-        c_head_a_1:
-          Value: true
-        l_ankle_v5_1:
-          Value: true
-        l_elbow_v4_1:
-          Value: true
-        l_foot_v3_1:
-          Value: true
-        l_hipjointlower_v4_1:
-          Value: true
-        l_hipjointupper_v4_1:
-          Value: true
-        l_lowerarm_v7_1:
-          Value: true
-        l_lowerreg_v5_1:
-          Value: true
-        l_shoulder_v5_1:
-          Value: true
-        l_upperarm_v4_1:
-          Value: true
-        l_upperreg_v3_1:
-          Value: true
-        r_ankle_v5_1:
-          Value: true
-        r_elbow_v4_1:
-          Value: true
-        r_foot_v3_1:
-          Value: true
-        r_hipjointlower_v4_1:
-          Value: true
-        r_hipjointupper_v4_1:
-          Value: true
-        r_lowerarm_v5_1:
-          Value: true
-        r_lowerreg_v5_1:
-          Value: true
-        r_shoulder_v4_1:
-          Value: true
-        r_upperarm_v3_1:
-          Value: true
-        r_upperreg_v3_1:
-          Value: true
-      Marker Alpha: 1
-      Marker Scale: 0.5
-      Name: TF
-      Show Arrows: true
-      Show Axes: true
-      Show Names: true
-      Tree:
-        base_link:
-          c_chest_c_1:
-            c_chest_a_1:
-              {}
-            c_chest_b_1:
-              {}
-            c_head_a_1:
-              {}
-            l_shoulder_v5_1:
-              l_upperarm_v4_1:
-                l_elbow_v4_1:
-                  l_lowerarm_v7_1:
-                    {}
-            r_shoulder_v4_1:
-              r_upperarm_v3_1:
-                r_elbow_v4_1:
-                  r_lowerarm_v5_1:
-                    {}
-          l_hipjointupper_v4_1:
-            l_hipjointlower_v4_1:
-              l_upperreg_v3_1:
-                l_lowerreg_v5_1:
-                  l_ankle_v5_1:
-                    l_foot_v3_1:
-                      {}
-          r_hipjointupper_v4_1:
-            r_hipjointlower_v4_1:
-              r_upperreg_v3_1:
-                r_lowerreg_v5_1:
-                  r_ankle_v5_1:
-                    r_foot_v3_1:
-                      {}
-      Update Interval: 0
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -323,7 +318,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.249603271484375
+      Distance: 1.2933698892593384
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -339,17 +334,17 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6953970193862915
+      Pitch: 0.5253982543945312
       Target Frame: <Fixed Frame>
-      Yaw: 0.5135819911956787
+      Yaw: 0.4353983402252197
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 882
+  Height: 846
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000156000002cefc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002ce000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002cefc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000002ce000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004f300000044fc0100000002fb0000000800540069006d00650100000000000004f3000002eb00fffffffb0000000800540069006d0065010000000000000450000000000000000000000282000002ce00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000156000002b0fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002b0000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002b0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000002b0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005b40000003efc0100000002fb0000000800540069006d00650100000000000005b4000002eb00fffffffb0000000800540069006d0065010000000000000450000000000000000000000343000002b000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -358,6 +353,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1267
-  X: 72
-  Y: 27
+  Width: 1460
+  X: 707
+  Y: 114

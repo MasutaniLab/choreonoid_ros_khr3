@@ -1,4 +1,4 @@
 <launch>
-    <node name="choreonoid_ros" pkg="choreonoid_ros" type="choreonoid" args="$(find KHR3_001_description)/project/ROS-KHR.cnoid"/>
-    <include file="$(find KHR3_001_description)/launch/choreonoid_ros_khr3_control_group.launch"/>
+    <node name="choreonoid_ros" pkg="choreonoid_ros" type="choreonoid" args="$(find choreonoid_ros_khr3)/project/khr3_001.cnoid"/>
+    <include file="$(find choreonoid_ros_khr3)/launch/choreonoid_ros_khr3_control_group.launch"/>
 </launch>

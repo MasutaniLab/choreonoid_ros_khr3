@@ -1,6 +1,6 @@
 <launch>
-  <param name="robot_description" command="$(find xacro)/xacro $(find KHR3_001_description)/urdf/KHR3_001.xacro"/>
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model KHR3_001"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(find choreonoid_ros_khr3)/xacro/khr3_001.xacro"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model khr3_001"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
     <arg name="use_sim_time" value="true"/>

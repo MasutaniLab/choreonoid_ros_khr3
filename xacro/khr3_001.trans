@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<robot name="KHR3_001" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<robot name="khr3_001" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="c_chest_yaw_tran">
+<transmission name="c_chest_yaw_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="c_chest_yaw">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -12,7 +12,7 @@
   </actuator>
 </transmission>
 
-<transmission name="c_head_yaw_tran">
+<transmission name="c_head_yaw_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="c_head_yaw">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -23,7 +23,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_shoulder_pitch_tran">
+<transmission name="l_shoulder_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_shoulder_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -34,7 +34,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_shoulder_roll_tran">
+<transmission name="l_shoulder_roll_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_shoulder_roll">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -45,7 +45,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_elbow_yaw_tran">
+<transmission name="l_elbow_yaw_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_elbow_yaw">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -56,7 +56,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_elbow_pitch_tran">
+<transmission name="l_elbow_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_elbow_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -67,7 +67,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_shoulder_pitch_tran">
+<transmission name="r_shoulder_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_shoulder_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -78,7 +78,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_shoulder_roll_tran">
+<transmission name="r_shoulder_roll_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_shoulder_roll">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -89,7 +89,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_elbow_yaw_tran">
+<transmission name="r_elbow_yaw_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_elbow_yaw">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -100,7 +100,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_elbow_pitch_tran">
+<transmission name="r_elbow_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_elbow_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -111,7 +111,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_hipjoint_yaw_tran">
+<transmission name="l_hipjoint_yaw_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_hipjoint_yaw">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -122,7 +122,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_hipjoint_roll_tran">
+<transmission name="l_hipjoint_roll_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_hipjoint_roll">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -133,7 +133,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_hipjoint_pitch_tran">
+<transmission name="l_hipjoint_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_hipjoint_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -144,7 +144,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_knee_pitch_tran">
+<transmission name="l_knee_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_knee_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -155,7 +155,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_ankle_pitch_tran">
+<transmission name="l_ankle_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_ankle_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -166,7 +166,7 @@
   </actuator>
 </transmission>
 
-<transmission name="l_ankle_roll_tran">
+<transmission name="l_ankle_roll_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="l_ankle_roll">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -177,7 +177,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_hipjoint_yaw_tran">
+<transmission name="r_hipjoint_yaw_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_hipjoint_yaw">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -188,7 +188,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_hipjoint_roll_tran">
+<transmission name="r_hipjoint_roll_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_hipjoint_roll">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -199,7 +199,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_hipjoint_pitch_tran">
+<transmission name="r_hipjoint_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_hipjoint_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -210,7 +210,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_knee_pitch_tran">
+<transmission name="r_knee_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_knee_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -221,7 +221,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_ankle_pitch_tran">
+<transmission name="r_ankle_pitch_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_ankle_pitch">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -232,7 +232,7 @@
   </actuator>
 </transmission>
 
-<transmission name="r_ankle_roll_tran">
+<transmission name="r_ankle_roll_tran"  type="SimpleTransmission">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="r_ankle_roll">
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
