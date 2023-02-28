@@ -603,7 +603,7 @@
   <origin xyz="0.010956 0.031242 0.25575" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="l_hipjointupper"/>
-  <axis xyz="-0.0 0.0 -1.0"/>
+  <axis xyz="-0.0 0.0 1.0"/>
   <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
@@ -659,7 +659,7 @@
   <origin xyz="0.0115 -0.0489 0.04775" rpy="0 0 0"/>
   <parent link="c_chest_c"/>
   <child link="r_shoulder"/>
-  <axis xyz="0.0 -1.0 -0.0"/>
+  <axis xyz="0.0 1.0 -0.0"/>
   <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
@@ -667,7 +667,7 @@
   <origin xyz="0.01575 -0.025 0.0" rpy="0 0 0"/>
   <parent link="r_shoulder"/>
   <child link="r_upperarm"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
   <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
@@ -675,7 +675,7 @@
   <origin xyz="-0.016 0.0 -0.07175" rpy="0 0 0"/>
   <parent link="r_upperarm"/>
   <child link="r_elbow"/>
-  <axis xyz="-0.0 0.0 1.0"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
   <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
@@ -699,7 +699,7 @@
   <origin xyz="0.0167 0.004 -0.02275" rpy="0 0 0"/>
   <parent link="r_hipjointupper"/>
   <child link="r_hipjointlower"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
   <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
@@ -707,7 +707,7 @@
   <origin xyz="-0.01625 -0.0275 -0.0395" rpy="0 0 0"/>
   <parent link="r_hipjointlower"/>
   <child link="r_upperreg"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
   <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
@@ -731,7 +731,7 @@
   <origin xyz="0.01975 0.028 -0.0395" rpy="0 0 0"/>
   <parent link="r_ankle"/>
   <child link="r_foot"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
   <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 

@@ -10,8 +10,9 @@ items:
       name: "World"
       plugin: Body
       class: WorldItem
+      is_selected: true
       data: 
-        collision_detection: false
+        collision_detection: true
         collision_detector: AISTCollisionDetector
         default_material_table_file: "${SHARE}/default/materials.yaml"
       children: 
@@ -64,21 +65,22 @@ items:
               "r_foot": 
                 base_frame: 0
                 offset_frame: 0
-            zmp: [ 0.00613747056, 0.00566031641, 0 ]
+            zmp: [ 0, 0, 0 ]
           children: 
             - 
               id: 3
               name: "BodyMotionController"
               plugin: Body
               class: BodyMotionControllerItem
+              is_checked: true
               children: 
                 - 
                   id: 4
-                  name: "stand_up"
+                  name: "idling"
                   plugin: PoseSeq
                   class: PoseSeqItem
                   data: 
-                    file: "stand_up.pseq"
+                    file: "idling.pseq"
                     format: POSE-SEQ-YAML
                     barLength: 1
             - 
@@ -89,15 +91,24 @@ items:
               data: 
                 body_ros_version: 0
                 joint_state_update_rate: 100
+            - 
+              id: 6
+              name: "ROSControl"
+              plugin: ROS
+              class: ROSControlItem
+              is_checked: true
+              data: 
+                name_space: /khr3_001
         - 
-          id: 6
+          id: 7
           name: "WorldROS"
           plugin: ROS
           class: WorldROSItem
+          is_checked: true
           data: 
             max_clock_publishing_rate: 100
         - 
-          id: 7
+          id: 8
           name: "floor"
           plugin: Body
           class: BodyItem
@@ -122,14 +133,16 @@ items:
             scene_sensitive: true
             zmp: [ 0, 0, 0 ]
         - 
-          id: 8
+          id: 9
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
+          is_selected: true
+          is_checked: true
           data: 
             timeStep: 0.001
             realtimeSync: true
-            recording: "off"
+            recording: "full"
             timeRangeMode: "Time bar range"
             timeLength: 180
             active_control_time_range_mode: false
@@ -165,7 +178,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      expanded: [ 1, 2, 3, 4 ]
+      expanded: [ 1, 2, 3, 9 ]
   - 
     id: 2
     plugin: Base
@@ -197,9 +210,9 @@ views:
         - 
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 0.63035, 0.342496, 0.416716 ]
-          direction: [ -0.837479, -0.461492, -0.292666 ]
-          up: [ -0.256325, -0.141248, 0.956215 ]
+          eye: [ -3.3059, 1.36035, 1.27978 ]
+          direction: [ 0.872603, -0.398026, -0.28309 ]
+          up: [ 0.257561, -0.117483, 0.959093 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -257,14 +270,14 @@ views:
     state: 
       element_type: all
       listing_mode: list
-      current_body_item: 2
+      current_body_item: 8
       body_items: 
         - 
-          id: 7
+          id: 8
           selected_links: [ 0 ]
         - 
           id: 2
-          selected_links: [ 0 ]
+          selected_links: [ 4 ]
   - 
     id: 8
     plugin: Body
@@ -289,7 +302,6 @@ views:
     class: PoseRollView
     mounted: true
     state: 
-      currentPoseSeqItem: 4
       defaultTransitionTime: 0
       updateAll: true
       autoUpdate: true
@@ -350,7 +362,7 @@ toolbars:
 Body: 
   "BodySelectionManager": 
     current_body_item: 2
-    current_link: "base_footprint"
+    current_link: "c_chest_a"
   "EditableSceneBody": 
     editableSceneBodies: 
       - 
@@ -359,7 +371,7 @@ Body:
         show_cm_projection: true
         show_zmp: false
       - 
-        bodyItem: 7
+        bodyItem: 8
         show_cm: false
         show_cm_projection: false
         show_zmp: false
@@ -384,7 +396,7 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 366, 1478 ]
+      sizes: [ 370, 1474 ]
       children: 
         - 
           type: splitter
@@ -401,12 +413,12 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 634, 225 ]
+          sizes: [ 692, 167 ]
           children: 
             - 
               type: splitter
               orientation: horizontal
-              sizes: [ 1024, 450 ]
+              sizes: [ 1021, 449 ]
               children: 
                 - 
                   type: pane
@@ -419,7 +431,7 @@ viewAreas:
             - 
               type: pane
               views: [ 3, 11, 10 ]
-              current: 3
+              current: 10
 layoutOfToolBars: 
   rows: 
     - 

@@ -1,11 +1,18 @@
 <?xml version="1.0" ?>
-<robot name="khr3_001" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="khr3_001">
 
-<xacro:include filename="$(find choreonoid_ros_khr3)/xacro/materials.xacro" />
-<xacro:include filename="$(find choreonoid_ros_khr3)/xacro/khr3_001.trans" />
-<xacro:include filename="$(find choreonoid_ros_khr3)/xacro/khr3_001.gazebo" />
+<material name="silver">
+  <color rgba="0.700 0.700 0.700 1.000"/>
+</material>
+<material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+<material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+    </material>
+</robot>
 
- <!-- Description of robot -->
+  <!-- Description of robot -->
 <link name="base_footprint"/>
 
 <link name="base_link">
@@ -533,7 +540,7 @@
   </collision>
 </link>
 
- <!-- revolute <-> revolute -->
+ <!-- continuous <-> revolute -->
 
 <joint name="floating_joint" type="floating">
         <parent link="base_footprint"/>
@@ -547,12 +554,12 @@
         <origin rpy="0 0 0" xyz="0 0 0"/>
 </joint> -->
 
-<joint name="c_chest_yaw" type="revolute">
+<joint name="c_chest_yaw" type="continuous">
   <origin xyz="0.010956 0.009542 0.29475" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="c_chest_c"/>
   <axis xyz="0.0 -0.0 1.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
 <joint name="intrgration_01" type="fixed">
@@ -567,172 +574,172 @@
   <child link="c_chest_a"/>
 </joint>
 
-<joint name="c_head_yaw" type="revolute">
-  <origin xyz="0.0115 0.0 0.0595" rpy="0 0 0"/>
-  <parent link="c_chest_c"/>
-  <child link="c_head_a"/>
-  <axis xyz="0.0 -0.0 1.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
-</joint>
-
-<joint name="l_shoulder_pitch" type="revolute">
+<joint name="l_shoulder_pitch" type="continuous">
   <origin xyz="0.0115 0.0489 0.04775" rpy="0 0 0"/>
   <parent link="c_chest_c"/>
   <child link="l_shoulder"/>
   <axis xyz="-0.0 1.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="l_shoulder_roll" type="revolute">
+<joint name="l_shoulder_roll" type="continuous">
   <origin xyz="0.01575 0.025 0.0" rpy="0 0 0"/>
   <parent link="l_shoulder"/>
   <child link="l_upperarm"/>
   <axis xyz="1.0 -0.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="l_elbow_yaw" type="revolute">
+<joint name="l_elbow_yaw" type="continuous">
   <origin xyz="-0.016 0.0 -0.07175" rpy="0 0 0"/>
   <parent link="l_upperarm"/>
   <child link="l_elbow"/>
   <axis xyz="-0.0 -0.0 1.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="l_elbow_pitch" type="revolute">
+<joint name="l_elbow_pitch" type="continuous">
   <origin xyz="0.0115 0.01625 -0.0145" rpy="0 0 0"/>
   <parent link="l_elbow"/>
   <child link="l_lowerarm"/>
   <axis xyz="-0.0 1.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="r_shoulder_pitch" type="revolute">
-  <origin xyz="0.0115 -0.0489 0.04775" rpy="0 0 0"/>
-  <parent link="c_chest_c"/>
-  <child link="r_shoulder"/>
-  <axis xyz="0.0 -1.0 -0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
-</joint>
-
-<joint name="r_shoulder_roll" type="revolute">
-  <origin xyz="0.01575 -0.025 0.0" rpy="0 0 0"/>
-  <parent link="r_shoulder"/>
-  <child link="r_upperarm"/>
-  <axis xyz="1.0 0.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
-</joint>
-
-<joint name="r_elbow_yaw" type="revolute">
-  <origin xyz="-0.016 0.0 -0.07175" rpy="0 0 0"/>
-  <parent link="r_upperarm"/>
-  <child link="r_elbow"/>
-  <axis xyz="-0.0 0.0 1.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
-</joint>
-
-<joint name="r_elbow_pitch" type="revolute">
-  <origin xyz="0.0115 -0.01625 -0.0145" rpy="0 0 0"/>
-  <parent link="r_elbow"/>
-  <child link="r_lowerarm"/>
-  <axis xyz="-0.0 1.0 -0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
-</joint>
-
-<joint name="l_hipjoint_yaw" type="revolute">
+<joint name="l_hipjoint_yaw" type="continuous">
   <origin xyz="0.010956 0.031242 0.25575" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="l_hipjointupper"/>
   <axis xyz="-0.0 0.0 -1.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="l_hipjoint_roll" type="revolute">
+<joint name="l_hipjoint_roll" type="continuous">
   <origin xyz="0.0167 -0.004 -0.02275" rpy="0 0 0"/>
   <parent link="l_hipjointupper"/>
   <child link="l_hipjointlower"/>
   <axis xyz="1.0 0.0 -0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="l_hipjoint_pitch" type="revolute">
+<joint name="l_hipjoint_pitch" type="continuous">
   <origin xyz="-0.01625 0.0275 -0.0395" rpy="0 0 0"/>
   <parent link="l_hipjointlower"/>
   <child link="l_upperreg"/>
   <axis xyz="-0.0 1.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="l_knee_pitch" type="revolute">
+<joint name="l_knee_pitch" type="continuous">
   <origin xyz="0.0 0.0 -0.065" rpy="0 0 0"/>
   <parent link="l_upperreg"/>
   <child link="l_lowerreg"/>
   <axis xyz="-0.0 1.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="l_ankle_pitch" type="revolute">
+<joint name="l_ankle_pitch" type="continuous">
   <origin xyz="-0.003363 0.0005 -0.064913" rpy="0 0 0"/>
   <parent link="l_lowerreg"/>
   <child link="l_ankle"/>
   <axis xyz="0.0 1.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="l_ankle_roll" type="revolute">
+<joint name="l_ankle_roll" type="continuous">
   <origin xyz="0.01975 -0.028 -0.0395" rpy="0 0 0"/>
   <parent link="l_ankle"/>
   <child link="l_foot"/>
   <axis xyz="1.0 -0.0 -0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="r_hipjoint_yaw" type="revolute">
+<joint name="c_head_yaw" type="continuous">
+  <origin xyz="0.0115 0.0 0.0595" rpy="0 0 0"/>
+  <parent link="c_chest_c"/>
+  <child link="c_head_a"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
+</joint>
+
+<joint name="r_shoulder_pitch" type="continuous">
+  <origin xyz="0.0115 -0.0489 0.04775" rpy="0 0 0"/>
+  <parent link="c_chest_c"/>
+  <child link="r_shoulder"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
+</joint>
+
+<joint name="r_shoulder_roll" type="continuous">
+  <origin xyz="0.01575 -0.025 0.0" rpy="0 0 0"/>
+  <parent link="r_shoulder"/>
+  <child link="r_upperarm"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
+</joint>
+
+<joint name="r_elbow_yaw" type="continuous">
+  <origin xyz="-0.016 0.0 -0.07175" rpy="0 0 0"/>
+  <parent link="r_upperarm"/>
+  <child link="r_elbow"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
+</joint>
+
+<joint name="r_elbow_pitch" type="continuous">
+  <origin xyz="0.0115 -0.01625 -0.0145" rpy="0 0 0"/>
+  <parent link="r_elbow"/>
+  <child link="r_lowerarm"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
+</joint>
+
+<joint name="r_hipjoint_yaw" type="continuous">
   <origin xyz="0.010956 -0.012158 0.25575" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="r_hipjointupper"/>
   <axis xyz="-0.0 0.0 -1.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="r_hipjoint_roll" type="revolute">
+<joint name="r_hipjoint_roll" type="continuous">
   <origin xyz="0.0167 0.004 -0.02275" rpy="0 0 0"/>
   <parent link="r_hipjointupper"/>
   <child link="r_hipjointlower"/>
   <axis xyz="1.0 0.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="r_hipjoint_pitch" type="revolute">
+<joint name="r_hipjoint_pitch" type="continuous">
   <origin xyz="-0.01625 -0.0275 -0.0395" rpy="0 0 0"/>
   <parent link="r_hipjointlower"/>
   <child link="r_upperreg"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="r_knee_pitch" type="revolute">
+<joint name="r_knee_pitch" type="continuous">
   <origin xyz="0.0 0.0 -0.065" rpy="0 0 0"/>
   <parent link="r_upperreg"/>
   <child link="r_lowerreg"/>
   <axis xyz="-0.0 1.0 -0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="r_ankle_pitch" type="revolute">
+<joint name="r_ankle_pitch" type="continuous">
   <origin xyz="-0.003363 -0.0005 -0.064913" rpy="0 0 0"/>
   <parent link="r_lowerreg"/>
   <child link="r_ankle"/>
   <axis xyz="0.0 1.0 -0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
-<joint name="r_ankle_roll" type="revolute">
+<joint name="r_ankle_roll" type="continuous">
   <origin xyz="0.01975 0.028 -0.0395" rpy="0 0 0"/>
   <parent link="r_ankle"/>
   <child link="r_foot"/>
   <axis xyz="1.0 0.0 0.0"/>
-  <limit effort="1.47" lower="${radians(-90)}" upper="${radians(90)}" velocity="0.002443280"/>
+  <limit effort="1000" lower="${radians(-90)}" upper="${radians(90)}" velocity="100.0"/>
 </joint>
 
 
